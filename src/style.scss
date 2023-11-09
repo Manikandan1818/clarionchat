@@ -80,6 +80,7 @@
   .sidebar {
     flex: 1.5;
     border-right: 1px solid #f25532;
+    background-color: #f0bcb0;
   }
   .chat {
     background-color: #fff;
@@ -138,23 +139,33 @@
         }
       }
     }
-    .userChat {
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #fff;
-      cursor: pointer;
+  }
+  .userChat {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    cursor: pointer;
 
-      &:hover {
-        background-color: #f25532;
+    &:hover {
+      background-color: #f25532;
+    }
+
+    img {
+      height: 45px;
+      width: 45px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .userChatInfo {
+      .span {
+        font-size: 18px;
+        font-weight: 500;
       }
-
-      img {
-        height: 45px;
-        width: 45px;
-        object-fit: cover;
-        border-radius: 50%;
+      p {
+        font-size: 12px;
       }
     }
   }
