@@ -1,11 +1,12 @@
 import React from "react";
+import clarion from "../assets/clarion.png";
 import Avatar from "../assets/camera-icon.png";
 
 const Register = () => {
   return (
     <div className="formContainer">
       <div className="formWrapper">
-        <span className="logo">Clarion Chat</span>
+        <img className="logo" src={clarion} alt="" />
         <span className="title">Register</span>
         <form>
           <input type="text" placeholder="display name" />
