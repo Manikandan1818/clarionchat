@@ -70,3 +70,92 @@
     }
   }
 }
+
+.home {
+  background-color: #fff;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+
+  .sidebar {
+    flex: 1.5;
+    border-right: 1px solid #f25532;
+  }
+  .chat {
+    background-color: #fff;
+    flex: 6.5;
+  }
+  .navbar {
+    background-color: #f25532;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    color: #fff;
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .username {
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      img {
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    button {
+      background-color: #fff;
+      padding: 5px 10px;
+      border: none;
+      font-size: 10px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+  .search {
+    background-color: #f0bcb0;
+    border-bottom: 1px solid #f25532;
+
+    .searchForm {
+      padding: 10px;
+
+      input {
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        outline: none;
+
+        &::placeholder {
+          color: #000;
+        }
+      }
+    }
+    .userChat {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f25532;
+      }
+
+      img {
+        height: 45px;
+        width: 45px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+  }
+}
