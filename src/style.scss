@@ -185,11 +185,84 @@
       background-color: #f9eeeb;
       padding: 10px;
       height: calc(100% - 160px);
+      overflow: scroll;
+
+      .message {
+        display: flex;
+        gap: 20px;
+
+        .messageInfo {
+          display: flex;
+          flex-direction: column;
+          font-size: 12px;
+          font-weight: 300;
+          color: #212121;
+          margin-bottom: 20px;
+
+          img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+        .messageContent {
+          max-width: 80%;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          p {
+            background-color: #fff;
+            padding: 10px 20px;
+            border-radius: 0 10px 10px 10px;
+            max-width: max-content;
+          }
+
+          img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+        &.owner {
+          flex-direction: row-reverse;
+          p {
+            background-color: #f9b7a8;
+            border-radius: 10px 0 10px 10p;
+          }
+        }
+      }
     }
     .input {
       background-color: #fff;
       height: 50px;
       padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      input {
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        &::placeholder {
+          color: #212121;
+        }
+      }
+
+      .send {
+        display: flex;
+        gap: 15px;
+
+        button {
+          color: #f25532;
+          border: none;
+          background-color: transparent;
+        }
+      }
     }
   }
 }
