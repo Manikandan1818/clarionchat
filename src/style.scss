@@ -1,3 +1,21 @@
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
 .formContainer {
   background-color: #f25532;
   height: 100vh;
@@ -106,6 +124,11 @@
         width: 32px;
         border-radius: 50%;
         object-fit: cover;
+        @include mobile {
+          height: 20px;
+          width: 20px;
+          object-fit: cover;
+        }
       }
     }
     button {
@@ -151,6 +174,11 @@
       width: 40px;
       object-fit: cover;
       border-radius: 50%;
+      @include mobile {
+        height: 20px;
+        width: 20px;
+        object-fit: cover;
+      }
     }
 
     .userChatInfo {
