@@ -16,15 +16,18 @@
   }
 }
 
+$primaryColor: #f25532;
+$text: #212121;
+
 .formContainer {
-  background-color: #f25532;
+  background-color: $primaryColor;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 
   .formWrapper {
-    background-color: #f25532;
+    background-color: $primaryColor;
     padding: 20px 60px;
     border-radius: 10px;
     display: flex;
@@ -51,7 +54,7 @@
       gap: 15px;
 
       input {
-        background-color: #f25532;
+        background-color: $primaryColor;
         padding: 12px;
         border: none;
         border-bottom: 1px solid #000000;
@@ -73,7 +76,7 @@
       }
       button {
         background-color: #000000;
-        color: #f25532;
+        color: $primaryColor;
         padding: 10px;
         font-size: 16px;
         border: none;
@@ -97,17 +100,17 @@
 
   .sidebar {
     flex: 1.5;
-    border-right: 1px solid #f25532;
+    border-right: 1px solid $primaryColor;
     background-color: #f9eeeb;
   }
   .navbar {
-    background-color: #f25532;
+    background-color: $primaryColor;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    color: #212121;
+    color: $text;
 
     .user {
       display: flex;
@@ -132,7 +135,7 @@
       }
     }
     button {
-      background-color: #f25532;
+      background-color: $primaryColor;
       padding: 5px 10px;
       border: none;
       cursor: pointer;
@@ -140,7 +143,7 @@
   }
   .search {
     background-color: #f9eeeb;
-    border-bottom: 1px solid #f25532;
+    border-bottom: 1px solid $primaryColor;
 
     .searchForm {
       padding: 10px;
@@ -152,7 +155,7 @@
         outline: none;
 
         &::placeholder {
-          color: #212121;
+          color: $text;
         }
       }
     }
@@ -162,7 +165,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #212121;
+    color: $text;
     cursor: pointer;
 
     &:hover {
@@ -202,7 +205,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      color: #212121;
+      color: $text;
       .chatIcons {
         display: flex;
         gap: 15px;
@@ -223,7 +226,7 @@
         .messageInfo {
           display: flex;
           flex-direction: column;
-          color: #212121;
+          color: $text;
           font-weight: 300;
 
           img {
@@ -275,7 +278,7 @@
         outline: none;
         font-size: 18px;
         &::placeholder {
-          color: #212121;
+          color: $text;
         }
       }
 
@@ -284,7 +287,7 @@
         gap: 15px;
 
         button {
-          color: #f25532;
+          color: $primaryColor;
           border: none;
           background-color: transparent;
         }
