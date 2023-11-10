@@ -1,4 +1,5 @@
 import React from "react";
+import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
 import Mani from "../assets/mani.jpg";
 
 const Navbar = () => {
@@ -8,7 +9,9 @@ const Navbar = () => {
         <img src={Mani} alt="" />
         <span className="username">Manikandan</span>
       </div>
-      <button>Logout</button>
+      <button>
+        <PowerSettingsNewIcon fontSize="medium" />
+      </button>
     </div>
   );
 };

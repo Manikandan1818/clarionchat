@@ -80,11 +80,7 @@
   .sidebar {
     flex: 1.5;
     border-right: 1px solid #f25532;
-    background-color: #f0bcb0;
-  }
-  .chat {
-    background-color: #fff;
-    flex: 6.5;
+    background-color: #f9eeeb;
   }
   .navbar {
     background-color: #f25532;
@@ -93,7 +89,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    color: #fff;
+    color: #212121;
 
     .user {
       display: flex;
@@ -113,16 +109,14 @@
       }
     }
     button {
-      background-color: #fff;
+      background-color: #f25532;
       padding: 5px 10px;
       border: none;
-      font-size: 10px;
-      font-weight: 500;
       cursor: pointer;
     }
   }
   .search {
-    background-color: #f0bcb0;
+    background-color: #f9eeeb;
     border-bottom: 1px solid #f25532;
 
     .searchForm {
@@ -135,7 +129,7 @@
         outline: none;
 
         &::placeholder {
-          color: #000;
+          color: #212121;
         }
       }
     }
@@ -145,16 +139,16 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #fff;
+    color: #212121;
     cursor: pointer;
 
     &:hover {
-      background-color: #f25532;
+      background-color: #f6795c;
     }
 
     img {
-      height: 45px;
-      width: 45px;
+      height: 40px;
+      width: 40px;
       object-fit: cover;
       border-radius: 50%;
     }
@@ -167,6 +161,35 @@
       p {
         font-size: 12px;
       }
+    }
+  }
+  .chat {
+    background-color: #fff;
+    flex: 6.5;
+
+    .chatInfo {
+      height: 50px;
+      background-color: #f6795c;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #212121;
+      .chatIcons {
+        display: flex;
+        gap: 15px;
+        cursor: pointer;
+      }
+    }
+    .messages {
+      background-color: #f9eeeb;
+      padding: 10px;
+      height: calc(100% - 160px);
+    }
+    .input {
+      background-color: #fff;
+      height: 50px;
+      padding: 10px;
     }
   }
 }
