@@ -4,8 +4,9 @@ import Avatar from "../assets/camera-icon.png";
 
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { doc, setDoc } from "firebase/firestore";
 
-import { auth, storage } from "../components/firebase";
+import { auth, db, storage } from "../components/firebase";
 
 const Register = () => {
   const [error, setError] = useState(true);
@@ -31,7 +32,13 @@ const Register = () => {
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
             await updateProfile(res.user, {
-              uid,
+              displayName,
+              photoURL: downloadURL,
+            });
+
+            // Add a new document in users collection
+            await setDoc(doc(db, "users", res.user.uid), {
+              uid: res.user.uid,
               displayName,
               email,
               photoURL: downloadURL,
@@ -59,6 +66,7 @@ const Register = () => {
             <span>Add an avatar</span>
           </label>
           <button>Sign Up</button>
+          {error}
         </form>
         <p>Do you have an account? Login</p>
       </div>
