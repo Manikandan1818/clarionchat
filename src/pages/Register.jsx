@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import clarion from "../assets/clarion.png";
 import Avatar from "../assets/camera-icon.png";
 
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../components/firebase";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+
+import { auth, storage } from "../components/firebase";
 
 const Register = () => {
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(true);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,7 +19,27 @@ const Register = () => {
 
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
-    } catch (error) {
+
+      const storageRef = ref(storage, displayName);
+
+      const uploadTask = uploadBytesResumable(storageRef, file);
+
+      uploadTask.on(
+        (error) => {
+          setError(true);
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+            await updateProfile(res.user, {
+              uid,
+              displayName,
+              email,
+              photoURL: downloadURL,
+            });
+          });
+        }
+      );
+    } catch (err) {
       setError(true);
     }
   };
@@ -37,7 +59,6 @@ const Register = () => {
             <span>Add an avatar</span>
           </label>
           <button>Sign Up</button>
-          {error && <span>Something went wrong!</span>}
         </form>
         <p>Do you have an account? Login</p>
       </div>
