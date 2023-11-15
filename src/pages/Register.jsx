@@ -9,7 +9,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { auth, db, storage } from "../components/firebase";
 
 const Register = () => {
-  const [error, setError] = useState(true);
+  const [error, setError] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,6 +20,7 @@ const Register = () => {
 
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(res);
 
       const storageRef = ref(storage, displayName);
 
@@ -43,6 +44,8 @@ const Register = () => {
               email,
               photoURL: downloadURL,
             });
+
+            await setDoc(doc(db, "userChats", res.user.id), {});
           });
         }
       );
