@@ -8,11 +8,13 @@ import { useContext } from "react";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
+  console.log(currentUser);
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/">
-          <Route index element={<Home />} />
+          <Route index element={currentUser ? <Home /> : <Login />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
         </Route>
